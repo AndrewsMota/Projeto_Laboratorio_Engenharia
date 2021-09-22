@@ -1,0 +1,29 @@
+﻿@model App.ViewModels.ApplicationUserViewModel
+@{
+    ViewData["Title"] = "Cadastro Pesquisador";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+
+            <vc:summary></vc:summary>
+
+            <h4>Cadastrar novo pesquisador.</h4>
+            <hr />
+            <partial name="_UserForm" />
+            <button class="btn btn-primary" asp-action="Adicionar">Cadastrar</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script>
+        BuscaCep();
+    </script>
+}
+

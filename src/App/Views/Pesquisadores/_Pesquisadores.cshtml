@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Business.Models.ApplicationUser>
+
+@{ var i = 0;
+    foreach (var usuario in Model)
+    {
+        if (i > 0)
+        {
+            <tr style="background-color: #f7f7f7 ">
+                <td>
+                    @Html.DisplayFor(modelItem => usuario.UserInfo.NomeCompleto)
+                </td>
+                <td>
+                    @this.FormataDocumento(usuario.UserInfo.Cpf)
+                </td>
+                <td>
+                    Pesquisador
+                </td>
+                <td>
+                    <a asp-action="Detalhes" asp-route-id="@usuario.Id">Detalhes</a>
+                    <a supress-by-role-name="Admin" asp-action="Promover" asp-route-id="@usuario.Id"> | Promover a presidente</a>
+                </td>
+            </tr>
+        }
+        i++;
+    }
+}
