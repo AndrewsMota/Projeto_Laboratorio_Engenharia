@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace Business.Interfaces
 {
-    public interface IEnderecoRepository
+    public interface IEnderecoRepository : IRepository<Endereco>
     {
         Task<Endereco> ObterEnderecoPorUserId(string userId);
     }
