@@ -42,15 +42,15 @@ namespace App.Controllers
                 Telefone = bioterioViewModel.Telefone,
                 Cnpj = bioterioViewModel.Cnpj,
 
-                EnderecoBioterio = new EnderecoBioterio
+                Endereco = new EnderecoBioterio
                 {
-                    Logradouro = bioterioViewModel.EnderecoBioterio.Logradouro,
-                    Numero = bioterioViewModel.EnderecoBioterio.Numero,
-                    Complemento = bioterioViewModel.EnderecoBioterio.Complemento,
-                    Cep = bioterioViewModel.EnderecoBioterio.Cep,
-                    Bairro = bioterioViewModel.EnderecoBioterio.Bairro,
-                    Cidade = bioterioViewModel.EnderecoBioterio.Cidade,
-                    Estado = bioterioViewModel.EnderecoBioterio.Estado
+                    Logradouro = bioterioViewModel.Endereco.Logradouro,
+                    Numero = bioterioViewModel.Endereco.Numero,
+                    Complemento = bioterioViewModel.Endereco.Complemento,
+                    Cep = bioterioViewModel.Endereco.Cep,
+                    Bairro = bioterioViewModel.Endereco.Bairro,
+                    Cidade = bioterioViewModel.Endereco.Cidade,
+                    Estado = bioterioViewModel.Endereco.Estado
                 }
             };
 

@@ -31,7 +31,7 @@
                     @Html.DisplayFor(modelItem => usuario.UserInfo.NomeCompleto)
                 </td>
                 <td>
-                    @this.FormataDocumento(usuario.UserInfo.Cpf)
+                    @this.FormataCpf(usuario.UserInfo.Cpf)
                 </td>
                 <td>
                     <a asp-action="Detalhes" asp-route-id="@usuario.Id">Detalhes</a>

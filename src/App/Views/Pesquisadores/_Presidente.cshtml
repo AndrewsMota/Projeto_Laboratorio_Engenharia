@@ -10,7 +10,7 @@
                     @Html.DisplayFor(modelItem => modelItem.First().UserInfo.NomeCompleto)
                 </td>
                 <td>
-                    @this.FormataDocumento(usuario.UserInfo.Cpf)
+                    @this.FormataCpf(usuario.UserInfo.Cpf)
                 </td>
                 <td>
                     Presidente
@@ -18,7 +18,7 @@
                 @if (usuario.UserInfo.Cpf != null)
                 {
                     <td>
-                        <a asp-action="Detalhes" asp-route-id="@usuario.Id"><spam class="fa fa-search"></a>
+                        <a asp-action="Detalhes" asp-route-id="@usuario.Id">Detalhes</a>
                         <a supress-by-role-name="Admin" asp-action="Rebaixar" asp-route-id="@usuario.Id"> | Rebaixar a pesquisador</a>
                     </td>
                 }

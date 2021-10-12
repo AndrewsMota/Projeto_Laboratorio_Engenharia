@@ -16,6 +16,6 @@ namespace Business.Models
 
 
         /*EF Relations*/
-        public EnderecoBioterio EnderecoBioterio { get; set; }
+        public EnderecoBioterio Endereco { get; set; }
     }
 }

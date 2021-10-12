@@ -24,7 +24,7 @@ namespace Data.Mappings
                 .IsRequired()
                 .HasColumnType("varchar(14)");
 
-            builder.HasOne(bioterio => bioterio.EnderecoBioterio)
+            builder.HasOne(bioterio => bioterio.Endereco)
             .WithOne(enderecoBioterio => enderecoBioterio.Bioterio)
             .HasForeignKey<EnderecoBioterio>(enderecoBioterio => enderecoBioterio.BioterioId);
 

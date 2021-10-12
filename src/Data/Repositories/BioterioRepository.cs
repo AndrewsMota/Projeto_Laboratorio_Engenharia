@@ -19,7 +19,7 @@ namespace Data.Repositories
         public async Task<Bioterio> ObterPorIdComEndereco(Guid id)
         {
             var bioterio = await ObterPorId(id);
-            bioterio.EnderecoBioterio = await ObterEnderecoPorBioterioId(bioterio.Id);
+            bioterio.Endereco = await ObterEnderecoPorBioterioId(bioterio.Id);
             return bioterio;
         }
     }

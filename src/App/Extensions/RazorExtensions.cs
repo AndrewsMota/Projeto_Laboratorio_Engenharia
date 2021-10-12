@@ -5,7 +5,7 @@ namespace App.Extensions
 {
     public static class RazorExtensions
     {
-        public static string FormataDocumento(this RazorPage page, string documento)
+        public static string FormataCpf(this RazorPage page, string documento)
         {
             if(documento != null)
             {
@@ -15,11 +15,21 @@ namespace App.Extensions
             return null;
         }
 
+        public static string FormataCnpj(this RazorPage page, string documento)
+        {
+            if (documento != null)
+            {
+                return Convert.ToUInt64(documento).ToString(@"00\.000\.000\/0000\-00");
+            }
+
+            return null;
+        }
+
         public static string FormataCep(this RazorPage page, string cep)
         {
             if (cep != null)
             {
-                return Convert.ToUInt64(cep).ToString(@"00000-000");
+                return Convert.ToUInt64(cep).ToString(@"00000\-000");
             }
 
             return null;
@@ -29,7 +39,7 @@ namespace App.Extensions
         {
             if (telefone != null)
             {
-                return Convert.ToUInt64(telefone).ToString(@"(00) 00000-0000");
+                return Convert.ToUInt64(telefone).ToString(@"(00) 00000\-0000");
             }
 
             return null;

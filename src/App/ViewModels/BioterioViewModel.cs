@@ -23,6 +23,6 @@ namespace App.ViewModels
         [StringLength(11, ErrorMessage = "O telefone deve conter {1} caracteres (incluindo DDD).", MinimumLength = 11)]
         public string Telefone { get; set; }
 
-        public EnderecoBioterioViewModel EnderecoBioterio { get; set; }
+        public EnderecoBioterioViewModel Endereco { get; set; }
     }
 }
