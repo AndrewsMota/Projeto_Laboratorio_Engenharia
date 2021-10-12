@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\paulo\\Documents\\Faculdade\\UNIT\\5° Período\\Laboratório de Engenharia de Software\\Biotério\\Bioterio\\src\\App\\App.csproj": {}
+    "C:\\Users\\paulo\\Documents\\Faculdade\\UNIT\\5° Período\\Laboratório de Engenharia de Software\\Projeto_Laboratorio_Engenharia\\src\\App\\App.csproj": {}
   },
   "projects": {
-    "C:\\Users\\paulo\\Documents\\Faculdade\\UNIT\\5° Período\\Laboratório de Engenharia de Software\\Biotério\\Bioterio\\src\\App\\App.csproj": {
+    "C:\\Users\\paulo\\Documents\\Faculdade\\UNIT\\5° Período\\Laboratório de Engenharia de Software\\Projeto_Laboratorio_Engenharia\\src\\App\\App.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\paulo\\Documents\\Faculdade\\UNIT\\5° Período\\Laboratório de Engenharia de Software\\Biotério\\Bioterio\\src\\App\\App.csproj",
+        "projectUniqueName": "C:\\Users\\paulo\\Documents\\Faculdade\\UNIT\\5° Período\\Laboratório de Engenharia de Software\\Projeto_Laboratorio_Engenharia\\src\\App\\App.csproj",
         "projectName": "App",
-        "projectPath": "C:\\Users\\paulo\\Documents\\Faculdade\\UNIT\\5° Período\\Laboratório de Engenharia de Software\\Biotério\\Bioterio\\src\\App\\App.csproj",
+        "projectPath": "C:\\Users\\paulo\\Documents\\Faculdade\\UNIT\\5° Período\\Laboratório de Engenharia de Software\\Projeto_Laboratorio_Engenharia\\src\\App\\App.csproj",
         "packagesPath": "C:\\Users\\paulo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\paulo\\Documents\\Faculdade\\UNIT\\5° Período\\Laboratório de Engenharia de Software\\Biotério\\Bioterio\\src\\App\\obj\\",
+        "outputPath": "C:\\Users\\paulo\\Documents\\Faculdade\\UNIT\\5° Período\\Laboratório de Engenharia de Software\\Projeto_Laboratorio_Engenharia\\src\\App\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\paulo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\paulo\\Documents\\Faculdade\\UNIT\\5° Período\\Laboratório de Engenharia de Software\\Biotério\\Bioterio\\src\\Data\\Data.csproj": {
-                "projectPath": "C:\\Users\\paulo\\Documents\\Faculdade\\UNIT\\5° Período\\Laboratório de Engenharia de Software\\Biotério\\Bioterio\\src\\Data\\Data.csproj"
+              "C:\\Users\\paulo\\Documents\\Faculdade\\UNIT\\5° Período\\Laboratório de Engenharia de Software\\Projeto_Laboratorio_Engenharia\\src\\Data\\Data.csproj": {
+                "projectPath": "C:\\Users\\paulo\\Documents\\Faculdade\\UNIT\\5° Período\\Laboratório de Engenharia de Software\\Projeto_Laboratorio_Engenharia\\src\\Data\\Data.csproj"
               }
             }
           }
@@ -44,6 +44,10 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.1.1, )"
+            },
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.15, )"
@@ -93,14 +97,14 @@
         }
       }
     },
-    "C:\\Users\\paulo\\Documents\\Faculdade\\UNIT\\5° Período\\Laboratório de Engenharia de Software\\Biotério\\Bioterio\\src\\Business\\Business.csproj": {
+    "C:\\Users\\paulo\\Documents\\Faculdade\\UNIT\\5° Período\\Laboratório de Engenharia de Software\\Projeto_Laboratorio_Engenharia\\src\\Business\\Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\paulo\\Documents\\Faculdade\\UNIT\\5° Período\\Laboratório de Engenharia de Software\\Biotério\\Bioterio\\src\\Business\\Business.csproj",
+        "projectUniqueName": "C:\\Users\\paulo\\Documents\\Faculdade\\UNIT\\5° Período\\Laboratório de Engenharia de Software\\Projeto_Laboratorio_Engenharia\\src\\Business\\Business.csproj",
         "projectName": "Business",
-        "projectPath": "C:\\Users\\paulo\\Documents\\Faculdade\\UNIT\\5° Período\\Laboratório de Engenharia de Software\\Biotério\\Bioterio\\src\\Business\\Business.csproj",
+        "projectPath": "C:\\Users\\paulo\\Documents\\Faculdade\\UNIT\\5° Período\\Laboratório de Engenharia de Software\\Projeto_Laboratorio_Engenharia\\src\\Business\\Business.csproj",
         "packagesPath": "C:\\Users\\paulo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\paulo\\Documents\\Faculdade\\UNIT\\5° Período\\Laboratório de Engenharia de Software\\Biotério\\Bioterio\\src\\Business\\obj\\",
+        "outputPath": "C:\\Users\\paulo\\Documents\\Faculdade\\UNIT\\5° Período\\Laboratório de Engenharia de Software\\Projeto_Laboratorio_Engenharia\\src\\Business\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\paulo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -129,27 +133,31 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.1.1, )"
+            },
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.15, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[3.1.15, )"
+              "version": "[3.1.18, )"
             },
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
-              "version": "[3.1.15, )"
+              "version": "[3.1.18, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[3.1.15, )"
+              "version": "[3.1.18, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.1.15, )"
+              "version": "[3.1.18, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
@@ -175,14 +183,14 @@
         }
       }
     },
-    "C:\\Users\\paulo\\Documents\\Faculdade\\UNIT\\5° Período\\Laboratório de Engenharia de Software\\Biotério\\Bioterio\\src\\Data\\Data.csproj": {
+    "C:\\Users\\paulo\\Documents\\Faculdade\\UNIT\\5° Período\\Laboratório de Engenharia de Software\\Projeto_Laboratorio_Engenharia\\src\\Data\\Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\paulo\\Documents\\Faculdade\\UNIT\\5° Período\\Laboratório de Engenharia de Software\\Biotério\\Bioterio\\src\\Data\\Data.csproj",
+        "projectUniqueName": "C:\\Users\\paulo\\Documents\\Faculdade\\UNIT\\5° Período\\Laboratório de Engenharia de Software\\Projeto_Laboratorio_Engenharia\\src\\Data\\Data.csproj",
         "projectName": "Data",
-        "projectPath": "C:\\Users\\paulo\\Documents\\Faculdade\\UNIT\\5° Período\\Laboratório de Engenharia de Software\\Biotério\\Bioterio\\src\\Data\\Data.csproj",
+        "projectPath": "C:\\Users\\paulo\\Documents\\Faculdade\\UNIT\\5° Período\\Laboratório de Engenharia de Software\\Projeto_Laboratorio_Engenharia\\src\\Data\\Data.csproj",
         "packagesPath": "C:\\Users\\paulo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\paulo\\Documents\\Faculdade\\UNIT\\5° Período\\Laboratório de Engenharia de Software\\Biotério\\Bioterio\\src\\Data\\obj\\",
+        "outputPath": "C:\\Users\\paulo\\Documents\\Faculdade\\UNIT\\5° Período\\Laboratório de Engenharia de Software\\Projeto_Laboratorio_Engenharia\\src\\Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\paulo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -199,8 +207,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\paulo\\Documents\\Faculdade\\UNIT\\5° Período\\Laboratório de Engenharia de Software\\Biotério\\Bioterio\\src\\Business\\Business.csproj": {
-                "projectPath": "C:\\Users\\paulo\\Documents\\Faculdade\\UNIT\\5° Período\\Laboratório de Engenharia de Software\\Biotério\\Bioterio\\src\\Business\\Business.csproj"
+              "C:\\Users\\paulo\\Documents\\Faculdade\\UNIT\\5° Período\\Laboratório de Engenharia de Software\\Projeto_Laboratorio_Engenharia\\src\\Business\\Business.csproj": {
+                "projectPath": "C:\\Users\\paulo\\Documents\\Faculdade\\UNIT\\5° Período\\Laboratório de Engenharia de Software\\Projeto_Laboratorio_Engenharia\\src\\Business\\Business.csproj"
               }
             }
           }
@@ -215,27 +223,31 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.1.1, )"
+            },
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.15, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[3.1.15, )"
+              "version": "[3.1.18, )"
             },
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
-              "version": "[3.1.15, )"
+              "version": "[3.1.18, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[3.1.15, )"
+              "version": "[3.1.18, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.1.15, )"
+              "version": "[3.1.18, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",

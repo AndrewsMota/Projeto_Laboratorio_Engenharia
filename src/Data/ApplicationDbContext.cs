@@ -10,6 +10,7 @@ namespace Data
         public DbSet<EnderecoBioterio> EnderecosBioterios { get; set; }
         public DbSet<Bioterio> Bioterios { get; set; }
         public DbSet<UserInfo> UsersInfo { get; set; }
+        public DbSet<Especie> Especies { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)

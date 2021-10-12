@@ -23,6 +23,7 @@ namespace App
         { 
             services.AddDatabase(Configuration);
             services.AddIdentity();
+            services.AddAutoMapper(typeof(Startup));
             services.AddDependencias();
             services.AddControllersWithViews();
             services.AddRazorPages();

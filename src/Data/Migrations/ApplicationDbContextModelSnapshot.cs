@@ -200,6 +200,26 @@ namespace Data.Migrations
                     b.ToTable("EnderecosBioterios");
                 });
 
+            modelBuilder.Entity("Business.Models.Especie", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("BioterioId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("varchar(300)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BioterioId");
+
+                    b.ToTable("Especies");
+                });
+
             modelBuilder.Entity("Business.Models.UserInfo", b =>
                 {
                     b.Property<Guid>("Id")
@@ -378,8 +398,17 @@ namespace Data.Migrations
             modelBuilder.Entity("Business.Models.EnderecoBioterio", b =>
                 {
                     b.HasOne("Business.Models.Bioterio", "Bioterio")
-                        .WithOne("EnderecoBioterio")
+                        .WithOne("Endereco")
                         .HasForeignKey("Business.Models.EnderecoBioterio", "BioterioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Business.Models.Especie", b =>
+                {
+                    b.HasOne("Business.Models.Bioterio", "Bioterio")
+                        .WithMany("Especies")
+                        .HasForeignKey("BioterioId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

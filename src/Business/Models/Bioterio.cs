@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Business.Models
 {
@@ -17,5 +18,6 @@ namespace Business.Models
 
         /*EF Relations*/
         public EnderecoBioterio Endereco { get; set; }
+        public IEnumerable<Especie> Especies { get; set; }
     }
 }

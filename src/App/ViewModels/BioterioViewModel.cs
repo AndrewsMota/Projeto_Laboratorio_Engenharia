@@ -1,9 +1,14 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace App.ViewModels
 {
     public class BioterioViewModel
     {
+        [Key]
+        public Guid Id { get; set; }
+
         [Required(ErrorMessage = "O campo {0} é obrigatório.")]
         [StringLength(200, ErrorMessage = "O campo {0} precisa ter entre {2} e {1} caracteres.", MinimumLength = 2)]
         public string Nome { get; set; }
@@ -24,5 +29,6 @@ namespace App.ViewModels
         public string Telefone { get; set; }
 
         public EnderecoBioterioViewModel Endereco { get; set; }
+        public IEnumerable<EspecieViewModel> Especies{ get; set; }
     }
 }

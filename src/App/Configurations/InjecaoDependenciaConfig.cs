@@ -15,9 +15,11 @@ namespace App.Configurations
             services.AddScoped<IEnderecoRepository, EnderecoRepository>();
             services.AddScoped<IUsersRepository, UsersRepository>();
             services.AddScoped<IBioterioRepository, BioterioRepository>();
+            services.AddScoped<IEspecieRepository, EspecieRepository>();
             services.AddScoped<IPesquisadoresService, PesquisadoresService>();
             services.AddScoped<ISecretariasService, SecretariasService>();
             services.AddScoped<IBioteriosService, BioteriosService>();
+            services.AddScoped<IEspeciesService, EspeciesService>();
 
             return services;
         }
