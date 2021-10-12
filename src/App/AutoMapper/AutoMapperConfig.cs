@@ -10,6 +10,7 @@ namespace App.AutoMapper
         {
             CreateMap<Bioterio, BioterioViewModel>().ReverseMap();
             CreateMap<Especie, EspecieViewModel>().ReverseMap();
+            CreateMap<EnderecoBioterio, EnderecoBioterioViewModel>().ReverseMap();
         }
     }
 }

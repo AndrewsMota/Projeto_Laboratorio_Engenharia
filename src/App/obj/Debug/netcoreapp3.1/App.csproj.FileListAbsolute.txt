@@ -384,3 +384,5 @@ C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia 
 C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia de Software\Projeto_Laboratorio_Engenharia\src\App\obj\Debug\netcoreapp3.1\App.dll
 C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia de Software\Projeto_Laboratorio_Engenharia\src\App\obj\Debug\netcoreapp3.1\App.pdb
 C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia de Software\Projeto_Laboratorio_Engenharia\src\App\obj\Debug\netcoreapp3.1\App.genruntimeconfig.cache
+C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia de Software\Projeto_Laboratorio_Engenharia\src\App\obj\Debug\netcoreapp3.1\Razor\Views\Especies\Detalhes.cshtml.g.cs
+C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia de Software\Projeto_Laboratorio_Engenharia\src\App\obj\Debug\netcoreapp3.1\Razor\Views\Especies\_ListarBioterios.cshtml.g.cs

@@ -1,0 +1,13 @@
+﻿@model App.ViewModels.EspecieViewModel
+
+@{
+    ViewData["Title"] = Model.Nome;
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <a href="##" onClick="history.go(-1); return false;"> Voltar</a>
+</div>
+
+<partial name="_ListarBioterios" />

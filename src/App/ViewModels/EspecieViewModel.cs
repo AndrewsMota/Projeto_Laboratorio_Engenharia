@@ -19,6 +19,6 @@ namespace App.ViewModels
         public string Nome { get; set; }
 
         public BioterioViewModel Bioterio { get; set; }
-        public IEnumerable<BioterioViewModel> Bioterios { get; set; }
+        public IList<BioterioViewModel> Bioterios { get; set; }
     }
 }

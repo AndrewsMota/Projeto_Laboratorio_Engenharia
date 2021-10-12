@@ -1,5 +1,6 @@
 ﻿using Business.Interfaces;
 using Business.Models;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -22,6 +23,12 @@ namespace Business.Services
             return especies;
         }
 
+        public async Task<IList<Especie>> ListarEspeciesComBioterio()
+        {
+            var especies = await _especieRepository.ObterTodosComBioteriosEEndereco();
+            return especies;
+        }
+
         public async Task Adicionar(Especie especie)
         {
             await _especieRepository.Adicionar(especie);
@@ -30,6 +37,13 @@ namespace Business.Services
         public async Task<IEnumerable<Bioterio>> ObterBioterios()
         {
             return await _bioteriosService.ListarBioterios();
+        }
+
+        public async Task<Especie> ObterPorId(Guid id)
+        {
+            var especie = await _especieRepository.ObterPorId(id);
+
+            return especie;
         }
     }    
 } 
