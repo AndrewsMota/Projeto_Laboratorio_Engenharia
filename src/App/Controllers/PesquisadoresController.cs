@@ -1,6 +1,7 @@
 ﻿using App.ViewModels;
 using Business.Models;
 using Business.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -75,6 +76,7 @@ namespace App.Controllers
             return View(usuario);
         }
 
+        [Authorize(Roles = "Admin")]
         [Route("promover/{id:guid}")]
         public async Task<IActionResult> Promover(string id)
         {
@@ -82,6 +84,7 @@ namespace App.Controllers
             return View(usuario);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [Route("promover/{id:guid}")]
         public async Task<IActionResult> PromoverConfirmado(string id)
@@ -90,6 +93,7 @@ namespace App.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize(Roles = "Admin")]
         [Route("rebaixar/{id:guid}")]
         public async Task<IActionResult> Rebaixar(string id)
         {
@@ -97,6 +101,7 @@ namespace App.Controllers
             return View(usuario);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [Route("rebaixar/{id:guid}")]
         public async Task<IActionResult> RebaixarConfirmado(string id)

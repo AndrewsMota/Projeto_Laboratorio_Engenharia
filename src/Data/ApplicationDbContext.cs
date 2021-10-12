@@ -7,6 +7,8 @@ namespace Data
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<Endereco> Enderecos { get; set; }
+        public DbSet<EnderecoBioterio> EnderecosBioterios { get; set; }
+        public DbSet<Bioterio> Bioterios { get; set; }
         public DbSet<UserInfo> UsersInfo { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)

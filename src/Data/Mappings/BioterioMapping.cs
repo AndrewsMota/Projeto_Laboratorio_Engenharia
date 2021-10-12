@@ -1,0 +1,34 @@
+﻿using Business.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+
+namespace Data.Mappings
+{
+    class BioterioMapping : IEntityTypeConfiguration<Bioterio>
+    {
+        public void Configure(EntityTypeBuilder<Bioterio> builder)
+        {
+            builder.Property(bioterio => bioterio.Nome)
+                .IsRequired()
+                .HasColumnType("varchar(300)");
+
+            builder.Property(bioterio => bioterio.Telefone)
+                .IsRequired()
+                .HasColumnType("varchar(11)");
+            
+            builder.Property(bioterio => bioterio.Email)
+                .IsRequired()
+                .HasColumnType("varchar(50)");
+
+            builder.Property(bioterio => bioterio.Cnpj)
+                .IsRequired()
+                .HasColumnType("varchar(14)");
+
+            builder.HasOne(bioterio => bioterio.EnderecoBioterio)
+            .WithOne(enderecoBioterio => enderecoBioterio.Bioterio)
+            .HasForeignKey<EnderecoBioterio>(enderecoBioterio => enderecoBioterio.BioterioId);
+
+            builder.ToTable("Bioterios");
+        }
+    }
+}

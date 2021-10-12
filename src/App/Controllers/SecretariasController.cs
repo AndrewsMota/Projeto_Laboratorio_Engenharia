@@ -1,6 +1,7 @@
 ﻿using App.ViewModels;
 using Business.Models;
 using Business.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -21,11 +22,13 @@ namespace App.Controllers
             return View(secretarias);
         }
 
+        [Authorize(Roles = "Admin")]
         public IActionResult Adicionar()
         {
             return View();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Adicionar(ApplicationUserViewModel userViewModel)
         {
