@@ -29,6 +29,6 @@ namespace App.ViewModels
         public string Telefone { get; set; }
 
         public EnderecoBioterioViewModel Endereco { get; set; }
-        public IEnumerable<EspecieViewModel> Especies{ get; set; }
+        public IList<EspecieViewModel> Especies{ get; set; }
     }
 }

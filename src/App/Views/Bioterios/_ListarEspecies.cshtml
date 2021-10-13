@@ -1,0 +1,40 @@
+﻿@model App.ViewModels.BioterioViewModel
+
+<div style="padding-top: 20px">
+    <div>
+        <hr />
+        <h4>Espécies</h4>
+    </div>
+
+    @if (Model != null)
+    {
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Especies)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            @foreach (var especie in Model.Especies)
+             {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => especie.Nome)
+                    </td>
+                    <td>
+                        <a asp-controller="Especies" asp-action="Detalhes" asp-route-id="@especie.Id">Detalhes</a>
+                    </td>
+                </tr>
+             }
+        </table>
+    }
+
+</div>
+
+<script>
+    SetModal();
+</script>
+

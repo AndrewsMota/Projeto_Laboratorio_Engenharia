@@ -84,13 +84,15 @@ namespace App.Controllers
         {
             var especie = _mapper.Map<EspecieViewModel>(await _especiesService.ObterPorId(id));
             var especies = _mapper.Map<IList<EspecieViewModel>>(await _especiesService.ListarEspeciesComBioterio());
+            var bioterioColocado = new List<Guid>();
 
-            foreach(var esp in especies)
+            foreach (var esp in especies)
             {
-                if (especie.Nome == esp.Nome)
+                if (especie.Nome == esp.Nome && !bioterioColocado.Contains(esp.Bioterio.Id))
                 {
                     if (especie.Bioterios == null) especie.Bioterios = new List<BioterioViewModel>();
                     especie.Bioterios.Add(esp.Bioterio);
+                    bioterioColocado.Add(esp.Bioterio.Id);
                 }
             }
 

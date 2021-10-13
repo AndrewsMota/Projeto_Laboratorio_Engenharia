@@ -1,9 +1,11 @@
 ﻿using App.ViewModels;
+using AutoMapper;
 using Business.Interfaces;
 using Business.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace App.Controllers
@@ -11,10 +13,14 @@ namespace App.Controllers
     public class BioteriosController : Controller
     {
         private readonly IBioteriosService _bioteriosService;
+        private readonly IEspeciesService _especiesService;
+        private readonly IMapper _mapper;
 
-        public BioteriosController(IBioteriosService bioteriosService)
+        public BioteriosController(IBioteriosService bioteriosService, IMapper mapper, IEspeciesService especiesService)
         {
             _bioteriosService = bioteriosService;
+            _mapper = mapper;
+            _especiesService = especiesService;
         }
 
         public async Task<IActionResult> Index()
@@ -62,7 +68,19 @@ namespace App.Controllers
         [Route("detalhes-bioterio/{id:guid}")]
         public async Task<IActionResult> Detalhes(Guid id)
         {
-            var bioterio = await _bioteriosService.ObterPorIdComEndereco(id);
+            var bioterio = _mapper.Map<BioterioViewModel>(await _bioteriosService.ObterPorIdComEndereco(id));
+            var especies = _mapper.Map<IList<EspecieViewModel>>(await _especiesService.ListarEspeciesComBioterio());
+            var especieColocada = new List<string>();
+
+            foreach (var especie in especies)
+            {
+                if (especie.Bioterio.Id == bioterio.Id && !especieColocada.Contains(especie.Nome))
+                {
+                    if (bioterio.Especies == null) bioterio.Especies = new List<EspecieViewModel>();
+                    bioterio.Especies.Add(especie);
+                    especieColocada.Add(especie.Nome);
+                }
+            }
 
             if (bioterio == null) return NotFound();
 
