@@ -22,11 +22,13 @@ namespace App.Controllers
             return View(pesquisadores);
         }
 
+        [Authorize(Roles = "Admin")]
         public IActionResult Adicionar()
         {
             return View();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Adicionar(ApplicationUserViewModel userViewModel)
         {

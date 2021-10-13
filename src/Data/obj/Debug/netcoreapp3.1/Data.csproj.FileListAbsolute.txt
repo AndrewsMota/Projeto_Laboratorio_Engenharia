@@ -28,3 +28,4 @@ C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia 
 C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia de Software\Projeto_Laboratorio_Engenharia\src\Data\obj\Debug\netcoreapp3.1\Data.dll
 C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia de Software\Projeto_Laboratorio_Engenharia\src\Data\obj\Debug\netcoreapp3.1\Data.pdb
 C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia de Software\Projeto_Laboratorio_Engenharia\src\Data\obj\Debug\netcoreapp3.1\Data.genruntimeconfig.cache
+C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia de Software\Projeto_Laboratorio_Engenharia\src\Data\obj\Debug\netcoreapp3.1\Data.GeneratedMSBuildEditorConfig.editorconfig
