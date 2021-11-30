@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Business.Models.ApplicationUser>
+
+@{  var i = 0;
+    foreach (var usuario in Model)
+    {
+        if (i <= 0)
+        { 
+            <tr style="background-color: #e0fff6 ">
+                <td>
+                    @Html.DisplayFor(modelItem => modelItem.First().UserInfo.NomeCompleto)
+                </td>
+                <td>
+                    @this.FormataCpf(usuario.UserInfo.Cpf)
+                </td>
+                <td>
+                    Presidente
+                </td>
+                @if (usuario.UserInfo.Cpf != null)
+                {
+                    <td>
+                        <a asp-action="Detalhes" asp-route-id="@usuario.Id">Detalhes</a>
+                        <a supress-by-role-name="Admin" asp-action="Rebaixar" asp-route-id="@usuario.Id"> | Rebaixar a pesquisador</a>
+                    </td>
+                }
+                else
+                {
+                    <td>
+                    </td>
+                }
+            </tr>
+        }
+        i++;
+    }
+}
