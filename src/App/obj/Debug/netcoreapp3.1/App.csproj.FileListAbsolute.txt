@@ -339,7 +339,6 @@ C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia 
 C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia de Software\Projeto_Laboratorio_Engenharia\src\App\obj\Debug\netcoreapp3.1\App.RazorAssemblyInfo.cs
 C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia de Software\Projeto_Laboratorio_Engenharia\src\App\obj\Debug\netcoreapp3.1\staticwebassets\App.StaticWebAssets.Manifest.cache
 C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia de Software\Projeto_Laboratorio_Engenharia\src\App\obj\Debug\netcoreapp3.1\staticwebassets\App.StaticWebAssets.xml
-C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia de Software\Projeto_Laboratorio_Engenharia\src\App\obj\Debug\netcoreapp3.1\scopedcss\bundle\App.styles.css
 C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia de Software\Projeto_Laboratorio_Engenharia\src\App\obj\Debug\netcoreapp3.1\App.TagHelpers.input.cache
 C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia de Software\Projeto_Laboratorio_Engenharia\src\App\obj\Debug\netcoreapp3.1\App.TagHelpers.output.cache
 C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia de Software\Projeto_Laboratorio_Engenharia\src\App\obj\Debug\netcoreapp3.1\App.RazorCoreGenerate.cache

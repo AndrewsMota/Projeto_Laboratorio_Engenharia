@@ -11,6 +11,8 @@ namespace Data
         public DbSet<Bioterio> Bioterios { get; set; }
         public DbSet<UserInfo> UsersInfo { get; set; }
         public DbSet<Especie> Especies { get; set; }
+        public DbSet<Protocolo> Protocolos { get; set; }
+        public DbSet<ProtocoloEspecie> ProtocolosEspecies { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)

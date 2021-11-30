@@ -8,7 +8,6 @@ namespace App.Controllers
     {
         public HomeController()
         {
-            
         }
 
         public IActionResult Index()

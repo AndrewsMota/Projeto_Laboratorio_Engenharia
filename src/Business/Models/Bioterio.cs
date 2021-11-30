@@ -16,7 +16,7 @@ namespace Business.Models
         public string Cnpj { get; set; }
 
 
-        /*EF Relations*/
+        /* EF Relations */
         public EnderecoBioterio Endereco { get; set; }
         public IEnumerable<Especie> Especies { get; set; }
     }
