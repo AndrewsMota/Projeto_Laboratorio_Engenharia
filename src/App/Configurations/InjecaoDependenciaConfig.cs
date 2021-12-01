@@ -23,6 +23,7 @@ namespace App.Configurations
             services.AddScoped<IProtocolosService, ProtocolosService>();
             services.AddScoped<IProtocoloRepository, ProtocoloRepository>();
             services.AddScoped<IProtocolosEspeciesRepository, ProtocolosEspeciesRepository>();
+            services.AddScoped<IProtocoloPareceristaRepository, ProtocoloPareceristaRepository>();
 
             return services;
         }

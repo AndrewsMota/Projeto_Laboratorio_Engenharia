@@ -26,7 +26,7 @@ namespace App.Controllers
             return View(secretarias);
         }
 
-        [Authorize(Roles = "Admin,Secretaria")]
+        [Authorize(Roles = "Admin,Secretária")]
         public async Task<IActionResult> ListarProtocolosSemParecerista()
         {
             var protocolos = await _protocolosService.ListarProtocolosSemParecerista();

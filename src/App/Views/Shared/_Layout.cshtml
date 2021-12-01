@@ -34,6 +34,9 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Protocolos" asp-action="Index">Protocolos</a>
                         </li>
+                        <li class="nav-item" supress-by-role-name="Secretária">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Secretarias" asp-action="ListarProtocolosSemParecerista">Ag. Parecerista</a>
+                        </li>
                     </ul>
                 </div>
             </div>

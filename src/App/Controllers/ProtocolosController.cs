@@ -86,12 +86,15 @@ namespace App.Controllers
             var especies = new List<EspecieViewModel>();
             var quantidades = new List<int>();
 
-            for (int i = 0; i < protocoloViewModel.Quantidades.Count; i++)
+            if(protocoloViewModel.Quantidades != null)
             {
-                if (protocoloViewModel.Quantidades[i] > 0)
+                for (int i = 0; i < protocoloViewModel.Quantidades.Count; i++)
                 {
-                    especies.Add(protocoloViewModel.Especies[i]);
-                    quantidades.Add(protocoloViewModel.Quantidades[i]);
+                    if (protocoloViewModel.Quantidades[i] > 0)
+                    {
+                        especies.Add(protocoloViewModel.Especies[i]);
+                        quantidades.Add(protocoloViewModel.Quantidades[i]);
+                    }
                 }
             }
 

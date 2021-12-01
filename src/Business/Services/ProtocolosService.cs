@@ -38,25 +38,26 @@ namespace Business.Services
 
         public async Task<IList<Protocolo>> ListarProtocolosSemParecerista()
         {
-            var protocolosPareceristas = await _protocoloPareceristaRepository.Buscar(protocoloParecerista => protocoloParecerista.PareceristaId == null);
-            var idsProtocolosSemParecerista = new List<Guid>();
+            var protocolosPareceristas = await _protocoloPareceristaRepository.ObterTodos();
+            var idsProtocolosComParecerista = new List<Guid>();
 
             foreach(var protocoloParecerista in protocolosPareceristas)
             {
-                idsProtocolosSemParecerista.Add(protocoloParecerista.ProtocoloId);
+                idsProtocolosComParecerista.Add(protocoloParecerista.ProtocoloId);
             }
 
             var protocolos = await ListarProtocolosComPesquisador();
+            var protocolosSemParecerista = new List<Protocolo>();
 
             foreach(var protocolo in protocolos)
             {
-                if (!idsProtocolosSemParecerista.Contains(protocolo.Id))
+                if (!idsProtocolosComParecerista.Contains(protocolo.Id))
                 {
-                    protocolos.Remove(protocolo);
+                    protocolosSemParecerista.Add(protocolo);
                 }
             }
 
-            return protocolos;
+            return protocolosSemParecerista;
         }
 
         public async Task<Protocolo> PopularPesquisador(Protocolo protocolo)
