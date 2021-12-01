@@ -1,0 +1,34 @@
+﻿@model IList<Business.Models.Protocolo>
+
+@{
+    ViewData["Title"] = "Protocolos aguardando envio para parecer";
+}
+
+<h1>Protocolos</h1>
+<hr />
+<br />
+<table class="table table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>Pesquisador</th>
+            <th>Data de Início</th>
+            <th>Data de Término</th>
+            <th>Status</th>
+            <th>Parecerista</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var protocolo in Model)
+        {
+            <tr style="background-color: #f7f7f7 ">
+                <td>@Html.DisplayFor(modelItem => protocolo.ApplicationUser.UserInfo.NomeCompleto)</td>
+                <td>@Html.DisplayFor(modelItem => protocolo.DataInicio)</td>
+                <td>@Html.DisplayFor(modelItem => protocolo.DataTermino)</td>
+                <td>@Html.DisplayFor(modelItem => protocolo.Status)</td>
+                <td><a asp-action="AtribuirParecerista" asp-route-id="@protocolo.Id">Atribuir Parecerista</a></td>
+                <td><a asp-controller="Protocolos" asp-action="Detalhes" asp-route-id="@protocolo.Id">Detalhes</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

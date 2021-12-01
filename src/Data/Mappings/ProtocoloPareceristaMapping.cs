@@ -10,6 +10,14 @@ namespace Data.Mappings
         {
             builder.HasKey(protocoloParecerista => protocoloParecerista.Id);
 
+            builder.Property(protocoloParecerista => protocoloParecerista.PareceristaId)
+                .IsRequired()
+                .HasColumnType("varchar(40)");
+
+            builder.Property(protocoloParecerista => protocoloParecerista.ProtocoloId)
+                .IsRequired()
+                .HasColumnType("varchar(40)");
+
             builder.ToTable("ProtocoloPareceristas");
         }
     }

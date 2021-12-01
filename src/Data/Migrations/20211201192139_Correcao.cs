@@ -3,10 +3,49 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Data.Migrations
 {
-    public partial class ProtocolosPareceristas : Migration
+    public partial class Correcao : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.AddColumn<string>(
+                name: "Email",
+                table: "Bioterios",
+                type: "varchar(50)",
+                nullable: false,
+                defaultValue: "");
+
+            migrationBuilder.CreateTable(
+                name: "Especies",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(nullable: false),
+                    BioterioId = table.Column<Guid>(nullable: false),
+                    Nome = table.Column<string>(type: "varchar(300)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Especies", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Especies_Bioterios_BioterioId",
+                        column: x => x.BioterioId,
+                        principalTable: "Bioterios",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ProtocoloPareceristas",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(nullable: false),
+                    ProtocoloId = table.Column<string>(type: "varchar(40)", nullable: false),
+                    PareceristaId = table.Column<string>(type: "varchar(40)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ProtocoloPareceristas", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Protocolos",
                 columns: table => new
@@ -29,31 +68,6 @@ namespace Data.Migrations
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "ProtocoloPareceristas",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(nullable: false),
-                    ProtocoloId = table.Column<Guid>(nullable: false),
-                    PareceristaId = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ProtocoloPareceristas", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_ProtocoloPareceristas_AspNetUsers_PareceristaId",
-                        column: x => x.PareceristaId,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_ProtocoloPareceristas_Protocolos_ProtocoloId",
-                        column: x => x.ProtocoloId,
-                        principalTable: "Protocolos",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -83,15 +97,9 @@ namespace Data.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_ProtocoloPareceristas_PareceristaId",
-                table: "ProtocoloPareceristas",
-                column: "PareceristaId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ProtocoloPareceristas_ProtocoloId",
-                table: "ProtocoloPareceristas",
-                column: "ProtocoloId",
-                unique: true);
+                name: "IX_Especies_BioterioId",
+                table: "Especies",
+                column: "BioterioId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Protocolos_ApplicationUserId",
@@ -118,7 +126,14 @@ namespace Data.Migrations
                 name: "ProtocolosEspecies");
 
             migrationBuilder.DropTable(
+                name: "Especies");
+
+            migrationBuilder.DropTable(
                 name: "Protocolos");
+
+            migrationBuilder.DropColumn(
+                name: "Email",
+                table: "Bioterios");
         }
     }
 }

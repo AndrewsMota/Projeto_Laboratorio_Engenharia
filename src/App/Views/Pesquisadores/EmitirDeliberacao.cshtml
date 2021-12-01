@@ -1,0 +1,66 @@
+﻿@model App.ViewModels.ProtocoloViewModel
+
+@{
+    ViewData["Title"] = "Emitir Deliberação";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <hr />
+    <h4>Informações</h4>
+    <dl class="row">
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.ApplicationUserViewModel.UserInfo.NomeCompleto)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ApplicationUserViewModel.UserInfo.NomeCompleto)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.DataInicio)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DataInicio)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.DataTermino)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DataTermino)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Justificativa)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Justificativa)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.ResumoPt)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ResumoPt)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.ResumoEn)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ResumoEn)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+    </dl>
+</div>
+<partial name="_ListarEspecies" />
+<hr/>
+<form enctype="multipart/form-data" asp-action="Create">
+     <button class="btn btn-danger" asp-action="DeliberacaoRecusada" asp-route-id="@Model.Id">Recusar</button>
+     <d style="padding-left:1em;" > </d>
+     <button class="btn btn-success" asp-action="DeliberacaoAprovada" asp-route-id="@Model.Id">Aprovar</button>
+</form>
+<hr/>
+<a href="##" onClick="history.go(-1); return false;" class="btn btn-info"> Voltar</a>
+

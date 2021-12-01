@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20211201160443_ProtocolosPareceristas")]
-    partial class ProtocolosPareceristas
+    [Migration("20211201192139_Correcao")]
+    partial class Correcao
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -267,17 +267,14 @@ namespace Data.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("PareceristaId")
-                        .HasColumnType("nvarchar(450)");
+                        .IsRequired()
+                        .HasColumnType("varchar(40)");
 
-                    b.Property<Guid>("ProtocoloId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("ProtocoloId")
+                        .IsRequired()
+                        .HasColumnType("varchar(40)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("PareceristaId");
-
-                    b.HasIndex("ProtocoloId")
-                        .IsUnique();
 
                     b.ToTable("ProtocoloPareceristas");
                 });
@@ -505,19 +502,6 @@ namespace Data.Migrations
                     b.HasOne("Business.Models.ApplicationUser", "ApplicationUser")
                         .WithMany("Protocolos")
                         .HasForeignKey("ApplicationUserId");
-                });
-
-            modelBuilder.Entity("Business.Models.ProtocoloParecerista", b =>
-                {
-                    b.HasOne("Business.Models.ApplicationUser", "Parecerista")
-                        .WithMany("ProtocoloParecerista")
-                        .HasForeignKey("PareceristaId");
-
-                    b.HasOne("Business.Models.Protocolo", "Protocolo")
-                        .WithOne("ProtocoloParecerista")
-                        .HasForeignKey("Business.Models.ProtocoloParecerista", "ProtocoloId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("Business.Models.ProtocolosEspecies", b =>

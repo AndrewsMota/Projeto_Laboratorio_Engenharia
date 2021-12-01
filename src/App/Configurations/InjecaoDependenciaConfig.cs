@@ -22,6 +22,7 @@ namespace App.Configurations
             services.AddScoped<IEspeciesService, EspeciesService>();
             services.AddScoped<IProtocolosService, ProtocolosService>();
             services.AddScoped<IProtocoloRepository, ProtocoloRepository>();
+            services.AddScoped<IParecerRepository, ParecerRepository>();
             services.AddScoped<IProtocolosEspeciesRepository, ProtocolosEspeciesRepository>();
             services.AddScoped<IProtocoloPareceristaRepository, ProtocoloPareceristaRepository>();
 

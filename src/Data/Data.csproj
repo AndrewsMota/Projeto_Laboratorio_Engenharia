@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20211011234344_BioterioCorrigido.cs" />
+    <Compile Remove="Migrations\20211011234344_BioterioCorrigido.Designer.cs" />
+    <Compile Remove="Migrations\20211012043218_BioterioEspecie.cs" />
+    <Compile Remove="Migrations\20211012043218_BioterioEspecie.Designer.cs" />
     <Compile Remove="Migrations\20211201153954_ProtocolosPareceristas.cs" />
     <Compile Remove="Migrations\20211201153954_ProtocolosPareceristas.Designer.cs" />
     <Compile Remove="Migrations\20211201155017_ProtocolosPareceristas.cs" />

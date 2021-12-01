@@ -20,22 +20,37 @@
                     <partial name="_LoginPartial" />
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Pesquisadores" asp-action="Index">Pesquisadores</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Pesquisadores" asp-action="Index">| Pesquisadores</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Secretarias" asp-action="Index">Secretárias</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Secretarias" asp-action="Index">| Secretárias</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Bioterios" asp-action="Index">Biotérios</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Bioterios" asp-action="Index">| Biotérios</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Especies" asp-action="Index">Espécies</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Especies" asp-action="Index">| Espécies</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Protocolos" asp-action="Index">Protocolos</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Protocolos" asp-action="Index">| Protocolos</a>
                         </li>
                         <li class="nav-item" supress-by-role-name="Secretária">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Secretarias" asp-action="ListarProtocolosSemParecerista">Ag. Parecerista</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Secretarias" asp-action="ListarProtocolosSemParecerista">| Agd. Parecerista</a>
+                        </li>
+                        <li class="nav-item" supress-by-role-name="Admin">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Secretarias" asp-action="ListarProtocolosSemParecerista">| Agd. Parecerista</a>
+                        </li>
+                        <li class="nav-item" supress-by-role-name="Pesquisador">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Pesquisadores" asp-action="ListarProtocolosDoParecerista">| Agd. Parecer</a>
+                        </li>
+                        <li class="nav-item" supress-by-role-name="Presidente">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Pesquisadores" asp-action="ListarProtocolosDoParecerista">| Agd. Parecer</a>
+                        </li>
+                        <li class="nav-item" supress-by-role-name="Admin">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Pesquisadores" asp-action="ListarProtocolosAguardandoDeliberacao">| Agd. Deliberação</a>
+                        </li>
+                        <li class="nav-item" supress-by-role-name="Presidente">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Pesquisadores" asp-action="ListarProtocolosAguardandoDeliberacao">| Agd. Deliberação</a>
                         </li>
                     </ul>
                 </div>

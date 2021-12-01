@@ -1,9 +1,12 @@
 ﻿using App.ViewModels;
+using AutoMapper;
 using Business.Interfaces;
 using Business.Models;
 using Business.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace App.Controllers
@@ -11,13 +14,19 @@ namespace App.Controllers
     public class SecretariasController : Controller
     {
         private readonly ISecretariasService _secretariasService;
+        private readonly IPesquisadoresService _pesquisadoresService;
         private readonly IProtocolosService _protocolosService;
+        private readonly IMapper _mapper;
 
         public SecretariasController(ISecretariasService secretariasService,
-                                     IProtocolosService protocolosService)
+                                     IProtocolosService protocolosService,
+                                     IPesquisadoresService pesquisadoresService,
+                                     IMapper mapper)
         {
             _secretariasService = secretariasService;
             _protocolosService = protocolosService;
+            _pesquisadoresService = pesquisadoresService;
+            _mapper = mapper;
         }
 
         public async Task<IActionResult> Index()
@@ -31,6 +40,35 @@ namespace App.Controllers
         {
             var protocolos = await _protocolosService.ListarProtocolosSemParecerista();
             return View(protocolos);
+        }
+
+        [Authorize(Roles = "Admin,Secretária")]
+        public async Task<IActionResult> AtribuirParecerista(Guid id)
+        {
+            var atribuirPareceristaViewModel = new AtribuirPareceristaViewModel() { ProtocoloId = id };
+            atribuirPareceristaViewModel = await PopularPareceristas(atribuirPareceristaViewModel);
+
+            if(atribuirPareceristaViewModel.Pareceristas.Count == 0)
+            {
+                return NotFound();
+            }
+            return View(atribuirPareceristaViewModel);
+        }
+
+        [Authorize(Roles = "Admin,Secretária")]
+        [HttpPost]
+        public async Task<IActionResult> AtribuirParecerista(AtribuirPareceristaViewModel atribuirPareceristaViewModel)
+        {
+            var protocoloParecerista = new ProtocoloParecerista()
+            {
+                PareceristaId = atribuirPareceristaViewModel.PareceristaId,
+                ProtocoloId = atribuirPareceristaViewModel.ProtocoloId.ToString()
+            };
+
+            await _protocolosService.AtribuirParecerista(protocoloParecerista);
+            await _protocolosService.AtualizarStatusProtocoloPorId(atribuirPareceristaViewModel.ProtocoloId, StatusProtocolo.AguardandoParecer);
+
+            return RedirectToAction("ListarProtocolosSemParecerista");
         }
 
         [Authorize(Roles = "Admin")]
@@ -92,6 +130,16 @@ namespace App.Controllers
         private async Task<ApplicationUser> ObterPorIdComUserInfoEEndereco(string id)
         {
             return await _secretariasService.ObterPorIdComUserInfoEEndereco(id);
+        }
+
+        private async Task<AtribuirPareceristaViewModel> PopularPareceristas(AtribuirPareceristaViewModel atribuirPareceristaViewModel)
+        {
+            atribuirPareceristaViewModel.Pareceristas = await _pesquisadoresService.ListarPesquisadores();
+            if(atribuirPareceristaViewModel.Pareceristas[0].UserInfo.NomeCompleto == "Nenhum presidente selecionado")
+            {
+                atribuirPareceristaViewModel.Pareceristas.RemoveAt(0);
+            }
+            return atribuirPareceristaViewModel;
         }
     }
 }

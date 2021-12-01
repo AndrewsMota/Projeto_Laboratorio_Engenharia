@@ -21,10 +21,6 @@ namespace Data.Mappings
             builder.HasMany(applicationUser => applicationUser.Protocolos)
             .WithOne(protocolo => protocolo.ApplicationUser)
             .HasForeignKey(protocolo => protocolo.ApplicationUserId);
-
-            builder.HasMany(applicationUser => applicationUser.ProtocoloParecerista)
-            .WithOne(protocoloParecerista => protocoloParecerista.Parecerista)
-            .HasForeignKey(protocoloParecerista => protocoloParecerista.PareceristaId);
         }
     }
 }

@@ -392,3 +392,10 @@ C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia 
 C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia de Software\Projeto_Laboratorio_Engenharia\src\App\obj\Debug\netcoreapp3.1\Razor\Views\Protocolos\Detalhes.cshtml.g.cs
 C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia de Software\Projeto_Laboratorio_Engenharia\src\App\obj\Debug\netcoreapp3.1\Razor\Views\Bioterios\_ListarEspecies.cshtml.g.cs
 C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia de Software\Projeto_Laboratorio_Engenharia\src\App\obj\Debug\netcoreapp3.1\Razor\Views\Protocolos\_ListarEspecies.cshtml.g.cs
+C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia de Software\Projeto_Laboratorio_Engenharia\src\App\obj\Debug\netcoreapp3.1\Razor\Views\Secretarias\ListarProtocolosSemParecerista.cshtml.g.cs
+C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia de Software\Projeto_Laboratorio_Engenharia\src\App\obj\Debug\netcoreapp3.1\Razor\Views\Secretarias\AtribuirParecerista.cshtml.g.cs
+C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia de Software\Projeto_Laboratorio_Engenharia\src\App\obj\Debug\netcoreapp3.1\Razor\Views\Pesquisadores\ListarProtocolosDoParecerista.cshtml.g.cs
+C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia de Software\Projeto_Laboratorio_Engenharia\src\App\obj\Debug\netcoreapp3.1\Razor\Views\Pesquisadores\DarParecer.cshtml.g.cs
+C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia de Software\Projeto_Laboratorio_Engenharia\src\App\obj\Debug\netcoreapp3.1\Razor\Views\Pesquisadores\ListarProtocolosAguardandoDeliberacao.cshtml.g.cs
+C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia de Software\Projeto_Laboratorio_Engenharia\src\App\obj\Debug\netcoreapp3.1\Razor\Views\Pesquisadores\EmitirDeliberacao.cshtml.g.cs
+C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia de Software\Projeto_Laboratorio_Engenharia\src\App\obj\Debug\netcoreapp3.1\Razor\Views\Pesquisadores\_ListarEspecies.cshtml.g.cs

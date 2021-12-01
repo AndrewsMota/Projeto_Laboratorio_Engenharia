@@ -1,0 +1,34 @@
+﻿@model App.ViewModels.ParecerViewModel
+@{
+    ViewData["Title"] = "Emitir Parecer";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+
+    <form enctype="multipart/form-data" asp-action="Create">
+        <hr />
+            <div class="form-group">
+                <label asp-for="ProtocoloId" class="control-label"></label>
+                <input rows="10" asp-for="ProtocoloId" readonly class="form-control"></input>
+                <span asp-validation-for="ProtocoloId" class="text-danger"></span>
+            </div>
+            <div class="form-group" >
+                <label asp-for="JustificativaDoParecer" class="control-label"></label>
+                <textarea rows="5" asp-for="JustificativaDoParecer" class="form-control"></textarea>
+                <span asp-validation-for="JustificativaDoParecer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="radio" value="1" asp-for="Escolha" checked /> Recomendado<br />
+                <input type="radio" value="2" asp-for="Escolha" checked /> Não Recomendado<br />
+            </div>
+
+        <a href="##" onClick="history.go(-1); return false;" class="btn btn-danger"> Voltar</a>
+        <a class="btn btn-primary" asp-controller="Protocolos" asp-action="Detalhes" asp-route-id="@Model.ProtocoloId">Detalhes</a>
+        <button class="btn btn-success" asp-action="DarParecer">Emitir Parecer</button>
+    </form>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

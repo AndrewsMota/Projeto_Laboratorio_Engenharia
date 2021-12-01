@@ -14,6 +14,7 @@ namespace Data
         public DbSet<Protocolo> Protocolos { get; set; }
         public DbSet<ProtocolosEspecies> ProtocolosEspecies { get; set; }
         public DbSet<ProtocoloParecerista> ProtocoloPareceristas{ get; set; }
+        public DbSet<Parecer> Pareceres { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)

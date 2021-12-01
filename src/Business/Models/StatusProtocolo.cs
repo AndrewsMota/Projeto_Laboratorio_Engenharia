@@ -6,6 +6,6 @@
         AguardandoParecer,
         AguardandoDeliberacao,
         Aprovado,
-        Rejeitado
+        Reprovado
     }
 }
