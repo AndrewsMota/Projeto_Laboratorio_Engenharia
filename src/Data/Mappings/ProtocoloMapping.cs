@@ -8,6 +8,8 @@ namespace Data.Mappings
     {
         public void Configure(EntityTypeBuilder<Protocolo> builder)
         {
+            builder.HasKey(protocolo => protocolo.Id);
+
             builder.Property(protocolo => protocolo.Justificativa)
                 .IsRequired()
                 .HasColumnType("varchar(500)");
@@ -31,10 +33,6 @@ namespace Data.Mappings
             builder.Property(userInfo => userInfo.Status)
                 .IsRequired()
                 .HasColumnType("varchar(50)");
-
-            builder.HasMany(protocolo => protocolo.ProtocolosEspecies)
-            .WithOne(protocolosEspecies => protocolosEspecies.Protocolo)
-            .HasForeignKey(protocolosEspecies => protocolosEspecies.ProtocoloId);
 
             builder.ToTable("Protocolos");
         }

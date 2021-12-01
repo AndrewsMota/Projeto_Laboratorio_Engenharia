@@ -19,6 +19,7 @@ namespace Business.Models
         /* EF Relations */
         public ApplicationUser ApplicationUser { get; set; }
         public IList<ProtocolosEspecies> ProtocolosEspecies { get; set; }
+        public ProtocoloParecerista ProtocoloParecerista { get; set; }
 
         public Protocolo()
         {
@@ -33,7 +34,6 @@ namespace Business.Models
             DataInicio = dataInicio;
             DataTermino = dataTermino;
             Status = StatusProtocolo.AguardandoEnvioParaParecer;
-
         }
     }
 }

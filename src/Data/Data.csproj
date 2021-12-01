@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20211201153954_ProtocolosPareceristas.cs" />
+    <Compile Remove="Migrations\20211201153954_ProtocolosPareceristas.Designer.cs" />
+    <Compile Remove="Migrations\20211201155017_ProtocolosPareceristas.cs" />
+    <Compile Remove="Migrations\20211201155017_ProtocolosPareceristas.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.15" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.18" />

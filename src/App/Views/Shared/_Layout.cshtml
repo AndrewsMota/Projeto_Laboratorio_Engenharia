@@ -20,9 +20,6 @@
                     <partial name="_LoginPartial" />
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Pesquisadores" asp-action="Index">Pesquisadores</a>
                         </li>
                         <li class="nav-item">
@@ -33,6 +30,12 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Especies" asp-action="Index">Espécies</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Protocolos" asp-action="Index">Protocolos</a>
+                        </li>
+                        <li class="nav-item" supress-by-role-name="Secretária">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Secretarias" asp-action="ListarProtocolosSemParecerista">Ag. Parecerista</a>
                         </li>
                     </ul>
                 </div>

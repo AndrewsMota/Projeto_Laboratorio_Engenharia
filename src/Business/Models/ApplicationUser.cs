@@ -10,5 +10,6 @@ namespace Business.Models
 
         /* EF Relations */
         public IEnumerable<Protocolo> Protocolos { get; set; }
+        public IList<ProtocoloParecerista> ProtocoloParecerista { get; set; }
     }
 }

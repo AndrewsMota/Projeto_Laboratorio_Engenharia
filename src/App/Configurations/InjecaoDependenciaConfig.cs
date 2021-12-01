@@ -20,6 +20,10 @@ namespace App.Configurations
             services.AddScoped<ISecretariasService, SecretariasService>();
             services.AddScoped<IBioteriosService, BioteriosService>();
             services.AddScoped<IEspeciesService, EspeciesService>();
+            services.AddScoped<IProtocolosService, ProtocolosService>();
+            services.AddScoped<IProtocoloRepository, ProtocoloRepository>();
+            services.AddScoped<IProtocolosEspeciesRepository, ProtocolosEspeciesRepository>();
+            services.AddScoped<IProtocoloPareceristaRepository, ProtocoloPareceristaRepository>();
 
             return services;
         }

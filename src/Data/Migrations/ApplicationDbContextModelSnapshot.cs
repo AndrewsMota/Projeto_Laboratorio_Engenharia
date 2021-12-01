@@ -226,6 +226,9 @@ namespace Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("ApplicationUserId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<DateTime>("DataInicio")
                         .HasColumnType("date");
 
@@ -250,10 +253,34 @@ namespace Data.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ApplicationUserId");
+
                     b.ToTable("Protocolos");
                 });
 
-            modelBuilder.Entity("Business.Models.ProtocoloEspecie", b =>
+            modelBuilder.Entity("Business.Models.ProtocoloParecerista", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("PareceristaId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<Guid>("ProtocoloId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PareceristaId");
+
+                    b.HasIndex("ProtocoloId")
+                        .IsUnique();
+
+                    b.ToTable("ProtocoloPareceristas");
+                });
+
+            modelBuilder.Entity("Business.Models.ProtocolosEspecies", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -471,16 +498,36 @@ namespace Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Business.Models.ProtocoloEspecie", b =>
+            modelBuilder.Entity("Business.Models.Protocolo", b =>
+                {
+                    b.HasOne("Business.Models.ApplicationUser", "ApplicationUser")
+                        .WithMany("Protocolos")
+                        .HasForeignKey("ApplicationUserId");
+                });
+
+            modelBuilder.Entity("Business.Models.ProtocoloParecerista", b =>
+                {
+                    b.HasOne("Business.Models.ApplicationUser", "Parecerista")
+                        .WithMany("ProtocoloParecerista")
+                        .HasForeignKey("PareceristaId");
+
+                    b.HasOne("Business.Models.Protocolo", "Protocolo")
+                        .WithOne("ProtocoloParecerista")
+                        .HasForeignKey("Business.Models.ProtocoloParecerista", "ProtocoloId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Business.Models.ProtocolosEspecies", b =>
                 {
                     b.HasOne("Business.Models.Especie", "Especie")
-                        .WithMany()
+                        .WithMany("ProtocolosEspecies")
                         .HasForeignKey("EspecieId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Business.Models.Protocolo", "Protocolo")
-                        .WithMany("ProtocoloEspecies")
+                        .WithMany("ProtocolosEspecies")
                         .HasForeignKey("ProtocoloId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
