@@ -8,6 +8,8 @@ namespace Data.Mappings
     {
         public void Configure(EntityTypeBuilder<Bioterio> builder)
         {
+            builder.HasKey(bioterio => bioterio.Id);
+
             builder.Property(bioterio => bioterio.Nome)
                 .IsRequired()
                 .HasColumnType("varchar(300)");

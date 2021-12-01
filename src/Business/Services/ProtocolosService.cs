@@ -10,15 +10,17 @@ namespace Business.Services
     {
         private readonly IProtocoloRepository _protocoloRepository;
         private readonly IProtocolosEspeciesRepository _protocolosEspeciesRepository;
+        private readonly IProtocoloPareceristaRepository _protocoloPareceristaRepository;
         private readonly IUsersRepository _usersRepository;
         private readonly IEspecieRepository _especieRepository;
 
-        public ProtocolosService(IProtocoloRepository protocoloRepository, IUsersRepository usersRepository, IProtocolosEspeciesRepository protocolosEspeciesRepository, IEspecieRepository especieRepository)
+        public ProtocolosService(IProtocoloRepository protocoloRepository, IUsersRepository usersRepository, IProtocolosEspeciesRepository protocolosEspeciesRepository, IEspecieRepository especieRepository, IProtocoloPareceristaRepository protocoloPareceristaRepository)
         {
             _protocoloRepository = protocoloRepository;
             _usersRepository = usersRepository;
             _protocolosEspeciesRepository = protocolosEspeciesRepository;
             _especieRepository = especieRepository;
+            _protocoloPareceristaRepository = protocoloPareceristaRepository;
         }
 
         public async Task<IList<Protocolo>> ListarProtocolos()
@@ -31,6 +33,29 @@ namespace Business.Services
         {
             var protocolos = await ListarProtocolos();
             for (int i = 0; i < protocolos.Count; i++) { protocolos[i] = await PopularPesquisador(protocolos[i]); }
+            return protocolos;
+        }
+
+        public async Task<IList<Protocolo>> ListarProtocolosSemParecerista()
+        {
+            var protocolosPareceristas = await _protocoloPareceristaRepository.Buscar(protocoloParecerista => protocoloParecerista.PareceristaId == null);
+            var idsProtocolosSemParecerista = new List<Guid>();
+
+            foreach(var protocoloParecerista in protocolosPareceristas)
+            {
+                idsProtocolosSemParecerista.Add(protocoloParecerista.ProtocoloId);
+            }
+
+            var protocolos = await ListarProtocolosComPesquisador();
+
+            foreach(var protocolo in protocolos)
+            {
+                if (!idsProtocolosSemParecerista.Contains(protocolo.Id))
+                {
+                    protocolos.Remove(protocolo);
+                }
+            }
+
             return protocolos;
         }
 

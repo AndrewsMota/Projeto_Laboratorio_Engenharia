@@ -8,6 +8,8 @@ namespace Data.Mappings
     {
         public void Configure(EntityTypeBuilder<ProtocolosEspecies> builder)
         {
+            builder.HasKey(protocoloEspecie => protocoloEspecie.Id);
+
             builder.Property(protocoloEspecie => protocoloEspecie.Quantidade)
                 .IsRequired()
                 .HasColumnType("varchar(5)");

@@ -392,4 +392,3 @@ C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia 
 C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia de Software\Projeto_Laboratorio_Engenharia\src\App\obj\Debug\netcoreapp3.1\Razor\Views\Protocolos\Detalhes.cshtml.g.cs
 C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia de Software\Projeto_Laboratorio_Engenharia\src\App\obj\Debug\netcoreapp3.1\Razor\Views\Bioterios\_ListarEspecies.cshtml.g.cs
 C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia de Software\Projeto_Laboratorio_Engenharia\src\App\obj\Debug\netcoreapp3.1\Razor\Views\Protocolos\_ListarEspecies.cshtml.g.cs
-C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia de Software\Projeto_Laboratorio_Engenharia\src\App\obj\Debug\netcoreapp3.1\scopedcss\bundle\App.styles.css

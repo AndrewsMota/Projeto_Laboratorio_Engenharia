@@ -258,6 +258,28 @@ namespace Data.Migrations
                     b.ToTable("Protocolos");
                 });
 
+            modelBuilder.Entity("Business.Models.ProtocoloParecerista", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("PareceristaId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<Guid>("ProtocoloId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PareceristaId");
+
+                    b.HasIndex("ProtocoloId")
+                        .IsUnique();
+
+                    b.ToTable("ProtocoloPareceristas");
+                });
+
             modelBuilder.Entity("Business.Models.ProtocolosEspecies", b =>
                 {
                     b.Property<Guid>("Id")
@@ -481,6 +503,19 @@ namespace Data.Migrations
                     b.HasOne("Business.Models.ApplicationUser", "ApplicationUser")
                         .WithMany("Protocolos")
                         .HasForeignKey("ApplicationUserId");
+                });
+
+            modelBuilder.Entity("Business.Models.ProtocoloParecerista", b =>
+                {
+                    b.HasOne("Business.Models.ApplicationUser", "Parecerista")
+                        .WithMany("ProtocoloParecerista")
+                        .HasForeignKey("PareceristaId");
+
+                    b.HasOne("Business.Models.Protocolo", "Protocolo")
+                        .WithOne("ProtocoloParecerista")
+                        .HasForeignKey("Business.Models.ProtocoloParecerista", "ProtocoloId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Business.Models.ProtocolosEspecies", b =>
