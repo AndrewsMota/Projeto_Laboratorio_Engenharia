@@ -2,7 +2,7 @@
 
 namespace Business.Models
 {
-    public class ProtocolosEspecies : Entidade
+    public class ProtocoloEspecie : Entidade
     {
         public Guid ProtocoloId { get; set; }
         public Guid EspecieId { get; set; }

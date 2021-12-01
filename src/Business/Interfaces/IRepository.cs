@@ -13,7 +13,7 @@ namespace Business.Interfaces
         Task RemoverPorId(Guid id);
         Task<List<TEntity>> ObterTodos();
         Task<TEntity> ObterPorId(Guid id);
-        Task<IList<TEntity>> Buscar(Expression<Func<TEntity, bool>> predicate);
+        Task<IEnumerable<TEntity>> Buscar(Expression<Func<TEntity, bool>> predicate);
         Task<int> SaveChanges();
     }
 }

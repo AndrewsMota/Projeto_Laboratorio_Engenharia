@@ -49,7 +49,7 @@ namespace Data.Repositories
             return await DbSet.FindAsync(id);
         }
 
-        public async Task<IList<TEntity>> Buscar(Expression<Func<TEntity, bool>> predicate)
+        public async Task<IEnumerable<TEntity>> Buscar(Expression<Func<TEntity, bool>> predicate)
         {
             return await DbSet.AsNoTracking().Where(predicate).ToListAsync();
         }

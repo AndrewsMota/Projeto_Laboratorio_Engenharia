@@ -53,11 +53,6 @@ namespace Data.Repositories
             return false;
         }
 
-        public async Task<ApplicationUser> ObterUsuarioLogado()
-        {
-            return await _userManager.GetUserAsync(_httpContextAccessor.HttpContext.User);
-        }
-
         public async Task<IList<ApplicationUser>> ObterUsuariosDaRoleComUserInfo(string role)
         {
             var usuarios = await _userManager.GetUsersInRoleAsync(role);

@@ -1,5 +1,4 @@
 ﻿using App.ViewModels;
-using Business.Interfaces;
 using Business.Models;
 using Business.Services;
 using Microsoft.AspNetCore.Authorization;
@@ -11,26 +10,16 @@ namespace App.Controllers
     public class SecretariasController : Controller
     {
         private readonly ISecretariasService _secretariasService;
-        private readonly IProtocolosService _protocolosService;
 
-        public SecretariasController(ISecretariasService secretariasService,
-                                     IProtocolosService protocolosService)
+        public SecretariasController(ISecretariasService secretariasService)
         {
             _secretariasService = secretariasService;
-            _protocolosService = protocolosService;
         }
 
         public async Task<IActionResult> Index()
         {
             var secretarias = await _secretariasService.ListarSecretarias();
             return View(secretarias);
-        }
-
-        [Authorize(Roles = "Admin,Secretária")]
-        public async Task<IActionResult> ListarProtocolosSemParecerista()
-        {
-            var protocolos = await _protocolosService.ListarProtocolosSemParecerista();
-            return View(protocolos);
         }
 
         [Authorize(Roles = "Admin")]

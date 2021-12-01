@@ -385,10 +385,5 @@ C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia 
 C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia de Software\Projeto_Laboratorio_Engenharia\src\App\obj\Debug\netcoreapp3.1\App.genruntimeconfig.cache
 C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia de Software\Projeto_Laboratorio_Engenharia\src\App\obj\Debug\netcoreapp3.1\Razor\Views\Especies\Detalhes.cshtml.g.cs
 C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia de Software\Projeto_Laboratorio_Engenharia\src\App\obj\Debug\netcoreapp3.1\Razor\Views\Especies\_ListarBioterios.cshtml.g.cs
-C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia de Software\Projeto_Laboratorio_Engenharia\src\App\obj\Debug\netcoreapp3.1\App.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia de Software\Projeto_Laboratorio_Engenharia\src\App\obj\Debug\netcoreapp3.1\Razor\Views\Home\Teste.cshtml.g.cs
-C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia de Software\Projeto_Laboratorio_Engenharia\src\App\obj\Debug\netcoreapp3.1\Razor\Views\Protocolos\Index.cshtml.g.cs
-C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia de Software\Projeto_Laboratorio_Engenharia\src\App\obj\Debug\netcoreapp3.1\Razor\Views\Protocolos\Emitir.cshtml.g.cs
-C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia de Software\Projeto_Laboratorio_Engenharia\src\App\obj\Debug\netcoreapp3.1\Razor\Views\Protocolos\Detalhes.cshtml.g.cs
 C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia de Software\Projeto_Laboratorio_Engenharia\src\App\obj\Debug\netcoreapp3.1\Razor\Views\Bioterios\_ListarEspecies.cshtml.g.cs
-C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia de Software\Projeto_Laboratorio_Engenharia\src\App\obj\Debug\netcoreapp3.1\Razor\Views\Protocolos\_ListarEspecies.cshtml.g.cs
+C:\Users\paulo\Documents\Faculdade\UNIT\5° Período\Laboratório de Engenharia de Software\Projeto_Laboratorio_Engenharia\src\App\obj\Debug\netcoreapp3.1\App.GeneratedMSBuildEditorConfig.editorconfig

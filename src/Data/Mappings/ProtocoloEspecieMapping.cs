@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Data.Mappings
 {
-    class ProtocolosEspeciesMapping : IEntityTypeConfiguration<ProtocolosEspecies>
+    class ProtocoloEspecieMapping : IEntityTypeConfiguration<ProtocoloEspecie>
     {
-        public void Configure(EntityTypeBuilder<ProtocolosEspecies> builder)
+        public void Configure(EntityTypeBuilder<ProtocoloEspecie> builder)
         {
             builder.Property(protocoloEspecie => protocoloEspecie.Quantidade)
                 .IsRequired()

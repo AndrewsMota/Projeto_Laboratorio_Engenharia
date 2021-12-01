@@ -14,6 +14,5 @@ namespace Business.Interfaces
         public Task<bool> AlterarRole(ApplicationUser user, string roleAntiga, string roleNova);
         public Task<ApplicationUser> ObterPorIdComUserInfo(string id);
         public Task<ApplicationUser> ObterPorIdComUserInfoEEndereco(string id);
-        public Task<ApplicationUser> ObterUsuarioLogado();
     }
 }

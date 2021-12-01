@@ -8,8 +8,6 @@ namespace Data.Mappings
     {
         public void Configure(EntityTypeBuilder<ApplicationUser> builder)
         {
-            builder.HasKey(applicationUser => applicationUser.Id);
-
             builder.HasOne(applicationUser => applicationUser.Endereco)
             .WithOne(endereco => endereco.ApplicationUser)
             .HasForeignKey<Endereco>(endereco => endereco.UserId);
@@ -21,10 +19,6 @@ namespace Data.Mappings
             builder.HasMany(applicationUser => applicationUser.Protocolos)
             .WithOne(protocolo => protocolo.ApplicationUser)
             .HasForeignKey(protocolo => protocolo.ApplicationUserId);
-
-            builder.HasMany(applicationUser => applicationUser.ProtocoloParecerista)
-            .WithOne(protocoloParecerista => protocoloParecerista.Parecerista)
-            .HasForeignKey(protocoloParecerista => protocoloParecerista.PareceristaId);
         }
     }
 }
