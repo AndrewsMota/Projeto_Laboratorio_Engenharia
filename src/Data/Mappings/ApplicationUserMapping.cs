@@ -15,6 +15,10 @@ namespace Data.Mappings
             builder.HasOne(applicationUser => applicationUser.UserInfo)
             .WithOne(userInfo => userInfo.ApplicationUser)
             .HasForeignKey<UserInfo>(userInfo => userInfo.UserId);
+
+            builder.HasMany(applicationUser => applicationUser.Protocolos)
+            .WithOne(protocolo => protocolo.ApplicationUser)
+            .HasForeignKey(protocolo => protocolo.ApplicationUserId);
         }
     }
 }

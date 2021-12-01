@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Business.Models
 {
@@ -9,5 +10,6 @@ namespace Business.Models
 
         /* EF Relations */
         public Bioterio Bioterio { get; set; }
+        public IEnumerable<ProtocolosEspecies> ProtocolosEspecies { get; set; }
     }
 }

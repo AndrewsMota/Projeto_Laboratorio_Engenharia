@@ -220,6 +220,64 @@ namespace Data.Migrations
                     b.ToTable("Especies");
                 });
 
+            modelBuilder.Entity("Business.Models.Protocolo", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("DataInicio")
+                        .HasColumnType("date");
+
+                    b.Property<DateTime>("DataTermino")
+                        .HasColumnType("date");
+
+                    b.Property<string>("Justificativa")
+                        .IsRequired()
+                        .HasColumnType("varchar(500)");
+
+                    b.Property<string>("ResumoEn")
+                        .IsRequired()
+                        .HasColumnType("varchar(1000)");
+
+                    b.Property<string>("ResumoPt")
+                        .IsRequired()
+                        .HasColumnType("varchar(1000)");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Protocolos");
+                });
+
+            modelBuilder.Entity("Business.Models.ProtocoloEspecie", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("EspecieId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ProtocoloId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Quantidade")
+                        .IsRequired()
+                        .HasColumnType("varchar(5)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EspecieId");
+
+                    b.HasIndex("ProtocoloId");
+
+                    b.ToTable("ProtocolosEspecies");
+                });
+
             modelBuilder.Entity("Business.Models.UserInfo", b =>
                 {
                     b.Property<Guid>("Id")
@@ -409,6 +467,21 @@ namespace Data.Migrations
                     b.HasOne("Business.Models.Bioterio", "Bioterio")
                         .WithMany("Especies")
                         .HasForeignKey("BioterioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Business.Models.ProtocoloEspecie", b =>
+                {
+                    b.HasOne("Business.Models.Especie", "Especie")
+                        .WithMany()
+                        .HasForeignKey("EspecieId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Business.Models.Protocolo", "Protocolo")
+                        .WithMany("ProtocoloEspecies")
+                        .HasForeignKey("ProtocoloId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

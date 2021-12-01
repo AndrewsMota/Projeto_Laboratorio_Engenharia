@@ -12,6 +12,10 @@ namespace Data.Mappings
                 .IsRequired()
                 .HasColumnType("varchar(300)");
 
+            builder.HasMany(especie => especie.ProtocolosEspecies)
+            .WithOne(protocolosEspecies => protocolosEspecies.Especie)
+            .HasForeignKey(protocolosEspecies => protocolosEspecies.EspecieId);
+
             builder.ToTable("Especies");
         }
     }
