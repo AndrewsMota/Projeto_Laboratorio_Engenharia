@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Business.Models.Protocolo>
+
+@{
+    ViewData["Title"] = "Protocolos";
+}
+
+<h1>Protocolos</h1>
+<hr />
+<br />
+<p supress-by-role-name="Pesquisador">
+    <a class="btn btn-info" asp-controller="Protocolos" asp-action="Emitir">Emitir Protocolo</a>
+    <hr />
+</p>
+<p supress-by-role-name="Admin">
+    <a class="btn btn-info" asp-controller="Protocolos" asp-action="Emitir">Emitir Protocolo</a>
+    <hr />
+</p>
+<p supress-by-role-name="Presidente">
+    <a class="btn btn-info" asp-controller="Protocolos" asp-action="Emitir">Emitir Protocolo</a>
+    <hr />
+</p>
+<table class="table table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>Pesquisador</th>
+            <th>Data de Início</th>
+            <th>Data de Término</th>
+            <th>Status</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var protocolo in Model)
+        {
+            <tr style="background-color: #f7f7f7 ">
+                <td>@Html.DisplayFor(modelItem => protocolo.ApplicationUser.UserInfo.NomeCompleto)</td>
+                <td>@Html.DisplayFor(modelItem => protocolo.DataInicio)</td>
+                <td>@Html.DisplayFor(modelItem => protocolo.DataTermino)</td>
+                <td>@Html.DisplayFor(modelItem => protocolo.Status)</td>
+                <td><a asp-action="Detalhes" asp-route-id="@protocolo.Id">Detalhes</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

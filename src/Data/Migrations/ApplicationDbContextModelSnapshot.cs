@@ -226,6 +226,9 @@ namespace Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("ApplicationUserId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<DateTime>("DataInicio")
                         .HasColumnType("date");
 
@@ -250,10 +253,12 @@ namespace Data.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ApplicationUserId");
+
                     b.ToTable("Protocolos");
                 });
 
-            modelBuilder.Entity("Business.Models.ProtocoloEspecie", b =>
+            modelBuilder.Entity("Business.Models.ProtocolosEspecies", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -471,16 +476,23 @@ namespace Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Business.Models.ProtocoloEspecie", b =>
+            modelBuilder.Entity("Business.Models.Protocolo", b =>
+                {
+                    b.HasOne("Business.Models.ApplicationUser", "ApplicationUser")
+                        .WithMany("Protocolos")
+                        .HasForeignKey("ApplicationUserId");
+                });
+
+            modelBuilder.Entity("Business.Models.ProtocolosEspecies", b =>
                 {
                     b.HasOne("Business.Models.Especie", "Especie")
-                        .WithMany()
+                        .WithMany("ProtocolosEspecies")
                         .HasForeignKey("EspecieId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Business.Models.Protocolo", "Protocolo")
-                        .WithMany("ProtocoloEspecies")
+                        .WithMany("ProtocolosEspecies")
                         .HasForeignKey("ProtocoloId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

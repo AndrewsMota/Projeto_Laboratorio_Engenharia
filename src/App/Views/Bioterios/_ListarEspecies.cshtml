@@ -19,16 +19,16 @@
             </thead>
 
             @foreach (var especie in Model.Especies)
-             {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => especie.Nome)
-                    </td>
-                    <td>
-                        <a asp-controller="Especies" asp-action="Detalhes" asp-route-id="@especie.Id">Detalhes</a>
-                    </td>
-                </tr>
-             }
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => especie.Nome)
+                </td>
+                <td>
+                    <a asp-controller="Especies" asp-action="Detalhes" asp-route-id="@especie.Id">Detalhes</a>
+                </td>
+            </tr>
+            }
         </table>
     }
 

@@ -1,0 +1,50 @@
+﻿@model App.ViewModels.ProtocoloViewModel
+
+<div style="padding-top: 20px">
+    <div>
+        <hr />
+        <h4>Espécies</h4>
+    </div>
+
+    @if (Model != null)
+    {
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Especies)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Quantidades)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            @{
+                var i = 0;
+                foreach (var especie in Model.Especies)
+                 {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => especie.Nome)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Quantidades[i])
+                        </td>
+                        <td>
+                            <a asp-controller="Especies" asp-action="Detalhes" asp-route-id="@especie.Id">Detalhes</a>
+                        </td>
+                    </tr>
+                    i++;
+                 }
+             }
+        </table>
+    }
+
+</div>
+
+<script>
+    SetModal();
+</script>
+

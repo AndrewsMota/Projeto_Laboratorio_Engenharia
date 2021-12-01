@@ -20,7 +20,7 @@ namespace App
         public IConfiguration Configuration { get; }
 
         public void ConfigureServices(IServiceCollection services)
-        { 
+        {
             services.AddDatabase(Configuration);
             services.AddIdentity();
             services.AddAutoMapper(typeof(Startup));

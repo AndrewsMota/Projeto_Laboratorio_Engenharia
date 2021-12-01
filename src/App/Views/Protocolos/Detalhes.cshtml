@@ -1,0 +1,61 @@
+﻿@model App.ViewModels.ProtocoloViewModel
+
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <hr />
+    <h4>Informações</h4>
+    <dl class="row">
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.ApplicationUserViewModel.UserInfo.NomeCompleto)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ApplicationUserViewModel.UserInfo.NomeCompleto)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.DataInicio)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DataInicio)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.DataTermino)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DataTermino)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Justificativa)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Justificativa)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.ResumoPt)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ResumoPt)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.ResumoEn)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ResumoEn)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a href="##" onClick="history.go(-1); return false;"> Voltar</a>
+</div>
+
+<partial name="_ListarEspecies" />
